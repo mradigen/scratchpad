@@ -8,6 +8,11 @@ A scratchpad is a feature or utility that provides a quick and accessible space 
 
 This script lets you store a window(s) to a toggleable desktop in bspwm, so you can quickly access them.
 
+## Dependencies
+
+-   `xdotool`
+-   `bspwm` (default, customize the script to match your WM)
+
 ## Usage
 
 There are 2 scripts:

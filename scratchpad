@@ -41,7 +41,7 @@ bspc node "${id}" --flag hidden --flag sticky=on
 if [ $? -eq 0 ]; then
 	# These are commands don't work at times for eg. when no window is on screen
 	# If yes, focus on it regardless of being hidden (makes code simpler)
-	${focus_after_toggle} && bspc node ${id} --focus
+	${focus_after_toggle} && bspc node ${id} --focus --layer above
 	# Set it to be floating
 	#bspc node ${id} -t floating
 else

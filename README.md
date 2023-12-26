@@ -15,7 +15,7 @@ This script lets you store a window(s) to a toggleable desktop in bspwm, so you 
 
 ## Usage
 
-There are 2 scripts:
+There are 3 scripts:
 
 1. `scratchpad` (Single window)
 
@@ -42,4 +42,14 @@ Commands:
     edit [CONFIG]                   Edit the given config
 
 The default config location is ~/.config/scratchpad/mainrc
+```
+
+3. `scrachpad-global-toggle` (Multi-window)
+
+Helper script that toggles visibility of multiple scratchpad windows. Any window that is marked as sticky is considered as a scratchpad window.
+
+This is basically a simplified `scratchpad-tiles` with no config file and program launching.
+
+```sh
+scrachpad-global-toggle # Toggle visibility of sticky windows
 ```

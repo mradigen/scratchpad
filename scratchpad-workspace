@@ -1,0 +1,41 @@
+#! /bin/sh
+
+_usage() {
+	cat <<EOF
+NAME
+	scratchpad-workspace - DESCRIPTION NOT PROVIDED
+
+USAGE
+	scratchpad-workspace
+
+DESCRIPTION
+	Scripts easen one's life.
+	But we don't know much about what this one does.
+	(DESCRIPTION NOT PROVIDED)
+
+DEPENDENCIES
+	- NOT_SET
+
+AUTHOR
+	ADIGEN (https://aadivishnu.com)
+EOF
+}
+
+case $1 in
+	-h|h|help|--help)
+		_usage
+		exit
+		;;
+esac
+
+current_ws=$(bspc query -D -d focused --names)
+target_ws=6
+last_ws_file="/tmp/last_workspace"
+
+if [ "$current_ws" = "$target_ws" ] && [ -f "$last_ws_file" ]; then
+  last_ws=$(cat "$last_ws_file")
+  bspc desktop -f "$last_ws"
+else
+  echo "$current_ws" > "$last_ws_file"
+  bspc desktop -f "$target_ws"
+fi
